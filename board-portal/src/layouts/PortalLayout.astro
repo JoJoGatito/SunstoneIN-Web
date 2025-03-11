@@ -1,0 +1,65 @@
+---
+import { supabase } from '../lib/supabase';
+
+const { title } = Astro.props;
+const user = Astro.locals.user;
+
+// Handle logout
+if (Astro.request.method === 'POST' && new URL(Astro.request.url).searchParams.get('action') === 'logout') {
+  await supabase.auth.signOut();
+  return Astro.redirect('/login');
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title} - Board Portal</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body class="bg-gray-100">
+  <div class="min-h-screen flex flex-col">
+    <!-- Top navigation -->
+    <header class="bg-white shadow">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+        <h1 class="text-xl font-bold">Board Portal</h1>
+        
+        <div class="flex items-center space-x-4">
+          <span>{user?.email}</span>
+          <form method="POST">
+            <input type="hidden" name="action" value="logout" />
+            <button type="submit" class="text-sm text-gray-700 hover:text-gray-900">
+              Logout
+            </button>
+          </form>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Sidebar and main content -->
+    <div class="flex-1 flex">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-white shadow-md">
+        <nav class="mt-5 px-2">
+          <a href="/portal" class="group flex items-center px-2 py-2 text-base font-medium rounded-md hover:bg-gray-50 hover:text-indigo-600">
+            Home
+          </a>
+          <a href="/portal/contacts" class="group flex items-center px-2 py-2 text-base font-medium rounded-md hover:bg-gray-50 hover:text-indigo-600">
+            Contacts
+          </a>
+          <a href="/portal/forum" class="group flex items-center px-2 py-2 text-base font-medium rounded-md hover:bg-gray-50 hover:text-indigo-600">
+            Discussion Forum
+          </a>
+        </nav>
+      </aside>
+      
+      <!-- Main content -->
+      <main class="flex-1 p-6">
+        <slot />
+      </main>
+    </div>
+  </div>
+</body>
+</html>
