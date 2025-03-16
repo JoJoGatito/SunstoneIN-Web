@@ -1,8 +1,13 @@
 [build]
-  command = "npm run build"
-  publish = "dist"
+  command = "cd board-portal && npm run build"
+  publish = "board-portal/dist"
+  functions = "board-portal/netlify/functions"
 
+[dev]
+  command = "cd board-portal && npm run dev"
+  framework = "astro"
+  
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/.netlify/functions/entry"
   status = 200

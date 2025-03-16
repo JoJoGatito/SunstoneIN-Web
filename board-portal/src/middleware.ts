@@ -5,7 +5,7 @@ export const onRequest = defineMiddleware(async ({ request, redirect, locals }, 
   const { pathname } = new URL(request.url);
 
   // Public routes - no auth needed
-  if (pathname === '/login' || pathname === '/signup' || pathname === '/reset-password') {
+  if (pathname === '/' || pathname === '/login' || pathname === '/signup' || pathname === '/reset-password') {
     return next();
   }
 
