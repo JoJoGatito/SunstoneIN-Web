@@ -1,8 +1,13 @@
 [build]
   base = "board-portal"
   command = "npm run build"
-  publish = "dist/client"
+  publish = "dist"
   functions = "netlify/functions"
+  
+  # Ensure environment variables are passed to the build
+  [build.environment]
+    PUBLIC_SUPABASE_URL = "https://ffpdecfzotgqkmuyvslt.supabase.co"
+    PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZmcGRlY2Z6b3RncWttdXl2c2x0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE2NDA5NjEsImV4cCI6MjA1NzIxNjk2MX0.jdlw2Mbh_Wt3ZyqspGm266THRvs3w6hfd9uO_rPNZWk"
 
 [dev]
   command = "npm run dev"
@@ -18,3 +23,9 @@
   from = "/_astro/*"
   to = "/_astro/:splat"
   status = 200
+  
+# Set cache headers for static assets
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
