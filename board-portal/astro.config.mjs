@@ -15,10 +15,5 @@ export default defineConfig({
     react()
   ],
   output: 'server',
-  // Explicitly configure the Netlify adapter with the function name
-  adapter: netlify({
-    functionName: 'ssr',
-    binaryMediaTypes: ['image/*', 'font/*', 'application/octet-stream'],
-    edgeMiddleware: false
-  })
+  adapter: netlify() // Use default Netlify adapter settings
 });
