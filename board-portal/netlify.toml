@@ -3,6 +3,7 @@
   publish = "dist"
 
 [functions]
+  directory = ".netlify/v1/functions"
   node_bundler = "esbuild"
 
 [[redirects]]
