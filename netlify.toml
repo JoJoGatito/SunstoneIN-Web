@@ -1,7 +1,7 @@
 [build]
   base = "board-portal"
   command = "npm run build"
-  publish = "dist"
+  publish = "dist/client"
   functions = "netlify/functions"
 
 [dev]
@@ -11,4 +11,10 @@
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/entry"
+  status = 200
+  
+# Make sure static assets are served correctly
+[[redirects]]
+  from = "/_astro/*"
+  to = "/_astro/:splat"
   status = 200
