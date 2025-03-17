@@ -1,13 +1,20 @@
 import { createClient } from '@supabase/supabase-js';
 
-// Get environment variables with fallbacks
-const supabaseUrl = 
-  import.meta.env.PUBLIC_SUPABASE_URL || 
-  process.env.PUBLIC_SUPABASE_URL;
+// Get environment variables with validation
+const getEnvVariable = (name: string): string => {
+  const value = import.meta.env[name] || process.env[name];
+  
+  if (!value) {
+    console.error(`Missing environment variable: ${name}`);
+    throw new Error(`Required environment variable ${name} is missing`);
+  }
+  
+  return value;
+};
 
-const supabaseKey = 
-  import.meta.env.PUBLIC_SUPABASE_ANON_KEY || 
-  process.env.PUBLIC_SUPABASE_ANON_KEY;
+// Get required environment variables or throw an error
+const supabaseUrl = getEnvVariable('PUBLIC_SUPABASE_URL');
+const supabaseKey = getEnvVariable('PUBLIC_SUPABASE_ANON_KEY');
 
 // Log for debugging
 console.log('Initializing Supabase client with URL:', supabaseUrl);

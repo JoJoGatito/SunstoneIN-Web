@@ -15,5 +15,7 @@ export default defineConfig({
     react()
   ],
   output: 'server',
-  adapter: netlify()  // Use default Netlify adapter settings
+  adapter: netlify({
+    functionName: 'ssr'
+  })
 });

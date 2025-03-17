@@ -4,7 +4,7 @@ import 'kleur/colors';
 import 'html-escaper';
 import 'clsx';
 /* empty css                                 */
-import { s as supabase } from '../chunks/supabase_x6k2sfRc.mjs';
+import { s as supabase } from '../chunks/supabase_BeVI_aZZ.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Astro$1 = createAstro("https://sunstoneinclusivity.network");

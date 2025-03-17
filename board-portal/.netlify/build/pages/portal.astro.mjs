@@ -2,7 +2,7 @@
 import { g as createComponent, l as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_DdXDRuRu.mjs';
 import 'kleur/colors';
 import 'html-escaper';
-import { $ as $$PortalLayout } from '../chunks/PortalLayout_BCyQirPy.mjs';
+import { $ as $$PortalLayout } from '../chunks/PortalLayout_Cz7LNTZN.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Index = createComponent(($$result, $$props, $$slots) => {

@@ -33,8 +33,8 @@ export const onRequest = defineMiddleware(async ({ request, redirect, locals }, 
     if (!session && !effectivePath.startsWith('/public')) {
       console.log('Protected route with no session, redirecting to login');
       // When in Netlify function context, adjust the redirect URL
-      const loginPath = pathname.includes('/.netlify/functions/entry') 
-        ? '/.netlify/functions/entry?astro_path=/login'
+      const loginPath = pathname.includes('/.netlify/functions/ssr') 
+        ? '/.netlify/functions/ssr?astro_path=/login'
         : '/login';
       
       return redirect(loginPath);

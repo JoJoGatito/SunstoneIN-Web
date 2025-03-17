@@ -5,7 +5,7 @@ import 'html-escaper';
 import 'clsx';
 import { A as AstroError, R as ResponseSentError, F as ForbiddenRewrite } from './chunks/astro/server_DdXDRuRu.mjs';
 import { serialize, parse } from 'cookie';
-import { s as supabase } from './chunks/supabase_x6k2sfRc.mjs';
+import { s as supabase } from './chunks/supabase_BeVI_aZZ.mjs';
 
 const DELETED_EXPIRATION = /* @__PURE__ */ new Date(0);
 const DELETED_VALUE = "deleted";
@@ -296,7 +296,7 @@ const onRequest$1 = defineMiddleware(async ({ request, redirect, locals }, next)
     console.log("Session check:", session ? "User is logged in" : "No session found");
     if (!session && !effectivePath.startsWith("/public")) {
       console.log("Protected route with no session, redirecting to login");
-      const loginPath = pathname.includes("/.netlify/functions/entry") ? "/.netlify/functions/entry?astro_path=/login" : "/login";
+      const loginPath = pathname.includes("/.netlify/functions/ssr") ? "/.netlify/functions/ssr?astro_path=/login" : "/login";
       return redirect(loginPath);
     }
     if (session) {

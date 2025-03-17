@@ -1,20 +1,25 @@
+# Main build configuration
 [build]
   command = "npm run build"
   publish = "dist/client"
   
-  # Environment variables are now set in Netlify UI
+  # All environment variables are managed in Netlify UI
+  # Required variables:
+  # - PUBLIC_SUPABASE_URL
+  # - PUBLIC_SUPABASE_ANON_KEY
 
+# Development settings
 [dev]
   command = "npm run dev"
   framework = "astro"
   
-# Let Astro's built-in Netlify adapter handle the routing
+# All requests are handled by the SSR function
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/ssr"
   status = 200
 
-# Set cache headers for static assets
+# Cache static assets for better performance
 [[headers]]
   for = "/_astro/*"
   [headers.values]

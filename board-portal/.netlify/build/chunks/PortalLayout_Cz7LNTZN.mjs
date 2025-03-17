@@ -2,7 +2,7 @@ import { f as createAstro, g as createComponent, i as addAttribute, j as renderH
 import 'kleur/colors';
 import 'html-escaper';
 import 'clsx';
-import { s as supabase } from './supabase_x6k2sfRc.mjs';
+import { s as supabase } from './supabase_BeVI_aZZ.mjs';
 /* empty css                         */
 
 const $$Astro = createAstro("https://sunstoneinclusivity.network");

@@ -2,8 +2,8 @@
 import { g as createComponent, l as renderComponent, r as renderTemplate, m as maybeRenderHead, i as addAttribute } from '../../chunks/astro/server_DdXDRuRu.mjs';
 import 'kleur/colors';
 import 'html-escaper';
-import { $ as $$PortalLayout } from '../../chunks/PortalLayout_BCyQirPy.mjs';
-import { s as supabase } from '../../chunks/supabase_x6k2sfRc.mjs';
+import { $ as $$PortalLayout } from '../../chunks/PortalLayout_Cz7LNTZN.mjs';
+import { s as supabase } from '../../chunks/supabase_BeVI_aZZ.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {
