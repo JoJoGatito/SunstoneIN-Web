@@ -1,10 +1,11 @@
 [build]
-  command = "cd board-portal && npm run build"
-  publish = "board-portal/dist"
-  functions = "board-portal/netlify/functions"
+  base = "board-portal"
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
 
 [dev]
-  command = "cd board-portal && npm run dev"
+  command = "npm run dev"
   framework = "astro"
   
 [[redirects]]
