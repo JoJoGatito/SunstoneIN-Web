@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && mkdir -p dist/client && cp -r dist/_astro dist/client/ && cp dist/favicon.svg dist/client/ && echo '/* /.netlify/functions/astro 200' > dist/client/_redirects",
+    "build": "astro build && mkdir -p dist/client && cp -r dist/_astro dist/client/ && cp dist/favicon.svg dist/client/ && echo '/* /.netlify/functions/ssr 200' > dist/client/_redirects",
     "preview": "astro preview",
     "astro": "astro"
   },
