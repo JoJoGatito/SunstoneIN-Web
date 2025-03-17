@@ -7,6 +7,9 @@ export default defineConfig({
   integrations: [tailwind(), react()],
   output: 'server',
   adapter: netlify({
-    edgeMiddleware: true
+    edgeMiddleware: false,
+    functionPerRoute: false,
+    binaryMediaTypes: ['image/*', 'font/*', 'application/pdf'],
+    platform: 'node' // Explicitly set platform to node to handle built-in modules
   }),
 });
