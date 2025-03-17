@@ -1,5 +1,5 @@
 /* empty css                                 */
-import { f as createComponent, g as createAstro, i as addAttribute, j as renderHead, k as renderSlot, r as renderTemplate, l as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_Diyk09nw.mjs';
+import { f as createAstro, g as createComponent, i as addAttribute, j as renderHead, k as renderSlot, r as renderTemplate, l as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_DdXDRuRu.mjs';
 import 'kleur/colors';
 import 'html-escaper';
 import 'clsx';
@@ -7,7 +7,7 @@ import 'clsx';
 import { s as supabase } from '../chunks/supabase_x6k2sfRc.mjs';
 export { renderers } from '../renderers.mjs';
 
-const $$Astro$1 = createAstro();
+const $$Astro$1 = createAstro("https://sunstoneinclusivity.network");
 const $$MainLayout = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$MainLayout;
@@ -16,7 +16,7 @@ const $$MainLayout = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`<html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>${title}</title><link rel="icon" type="image/svg+xml"${addAttribute(`${baseUrl}/favicon.svg`, "href")}><!-- Import Tailwind CSS -->${renderHead()}</head> <body> ${renderSlot($$result, $$slots["default"])} </body></html>`;
 }, "/Users/yordan/Projects/SunstoneIN-Web/board-portal/src/layouts/MainLayout.astro", void 0);
 
-const $$Astro = createAstro();
+const $$Astro = createAstro("https://sunstoneinclusivity.network");
 const $$Login = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Login;

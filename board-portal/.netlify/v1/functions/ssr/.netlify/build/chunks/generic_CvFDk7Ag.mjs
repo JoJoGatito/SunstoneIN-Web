@@ -1,4 +1,4 @@
-import { A as AstroError, E as ExpectedImage, L as LocalImageUsedWrongly, M as MissingImageDimension, U as UnsupportedImageFormat, I as IncompatibleDescriptorOptions, a as UnsupportedImageConversion, t as toStyleString, N as NoImageMetadata, b as FailedToFetchRemoteImageDimensions, c as ExpectedImageOptions, d as ExpectedNotESMImage, e as InvalidImageService, f as createComponent, g as createAstro, h as ImageMissingAlt, m as maybeRenderHead, i as addAttribute, s as spreadAttributes, r as renderTemplate } from './astro/server_Diyk09nw.mjs';
+import { A as AstroError, E as ExpectedImage, L as LocalImageUsedWrongly, M as MissingImageDimension, U as UnsupportedImageFormat, I as IncompatibleDescriptorOptions, a as UnsupportedImageConversion, t as toStyleString, N as NoImageMetadata, b as FailedToFetchRemoteImageDimensions, c as ExpectedImageOptions, d as ExpectedNotESMImage, e as InvalidImageService, f as createAstro, g as createComponent, h as ImageMissingAlt, m as maybeRenderHead, i as addAttribute, s as spreadAttributes, r as renderTemplate } from './astro/server_DdXDRuRu.mjs';
 import 'html-escaper';
 import 'clsx';
 import * as mime from 'mrmime';
@@ -1283,7 +1283,7 @@ async function getConfiguredImageService() {
   if (!globalThis?.astroAsset?.imageService) {
     const { default: service } = await import(
       // @ts-expect-error
-      './sharp_ieeK3ztn.mjs'
+      './sharp_BG-kvSQz.mjs'
     ).catch((e) => {
       const error = new AstroError(InvalidImageService);
       error.cause = e;
@@ -1429,7 +1429,7 @@ async function getImage$1(options, imageConfig) {
   };
 }
 
-const $$Astro$1 = createAstro();
+const $$Astro$1 = createAstro("https://sunstoneinclusivity.network");
 const $$Image = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Image;
@@ -1459,7 +1459,7 @@ const $$Image = createComponent(async ($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<img${addAttribute(image.src, "src")}${spreadAttributes(attributes)}${addAttribute(className, "class")}>`;
 }, "/Users/yordan/Projects/SunstoneIN-Web/board-portal/node_modules/astro/components/Image.astro", void 0);
 
-const $$Astro = createAstro();
+const $$Astro = createAstro("https://sunstoneinclusivity.network");
 const $$Picture = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Picture;

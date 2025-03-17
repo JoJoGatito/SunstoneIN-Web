@@ -3,10 +3,7 @@
   command = "npm run build"
   publish = "dist/client"
   
-  # Ensure environment variables are passed to the build
-  [build.environment]
-    PUBLIC_SUPABASE_URL = "https://ffpdecfzotgqkmuyvslt.supabase.co"
-    PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZmcGRlY2Z6b3RncWttdXl2c2x0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE2NDA5NjEsImV4cCI6MjA1NzIxNjk2MX0.jdlw2Mbh_Wt3ZyqspGm266THRvs3w6hfd9uO_rPNZWk"
+  # Environment variables are now set in Netlify UI
 
 [dev]
   command = "npm run dev"

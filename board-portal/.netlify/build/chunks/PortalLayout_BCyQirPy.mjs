@@ -1,11 +1,11 @@
-import { f as createComponent, g as createAstro, i as addAttribute, j as renderHead, k as renderSlot, r as renderTemplate } from './astro/server_Diyk09nw.mjs';
+import { f as createAstro, g as createComponent, i as addAttribute, j as renderHead, k as renderSlot, r as renderTemplate } from './astro/server_DdXDRuRu.mjs';
 import 'kleur/colors';
 import 'html-escaper';
 import 'clsx';
 import { s as supabase } from './supabase_x6k2sfRc.mjs';
 /* empty css                         */
 
-const $$Astro = createAstro();
+const $$Astro = createAstro("https://sunstoneinclusivity.network");
 const $$PortalLayout = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$PortalLayout;

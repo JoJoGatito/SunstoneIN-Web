@@ -1,5 +1,5 @@
 /* empty css                                 */
-import { f as createComponent, g as createAstro, m as maybeRenderHead, i as addAttribute, r as renderTemplate, j as renderHead, k as renderSlot, l as renderComponent } from '../chunks/astro/server_Diyk09nw.mjs';
+import { f as createAstro, g as createComponent, m as maybeRenderHead, i as addAttribute, r as renderTemplate, j as renderHead, k as renderSlot, l as renderComponent } from '../chunks/astro/server_DdXDRuRu.mjs';
 import 'kleur/colors';
 import 'html-escaper';
 import 'clsx';
@@ -32,7 +32,7 @@ const background = new Proxy({"src":"/_astro/background.BPKAcmfN.svg","width":14
 						}
 					});
 
-const $$Astro$2 = createAstro();
+const $$Astro$2 = createAstro("https://sunstoneinclusivity.network");
 const $$Welcome = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$Welcome;
@@ -44,14 +44,14 @@ From content layers to server islands, click to learn more about the new feature
 </p> </a> </div> `;
 }, "/Users/yordan/Projects/SunstoneIN-Web/board-portal/src/components/Welcome.astro", void 0);
 
-const $$Astro$1 = createAstro();
+const $$Astro$1 = createAstro("https://sunstoneinclusivity.network");
 const $$Layout = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Layout;
   return renderTemplate`<html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator"${addAttribute(Astro2.generator, "content")}><title>Astro Basics</title><!-- Import Tailwind CSS -->${renderHead()}</head> <body> ${renderSlot($$result, $$slots["default"])} </body></html>`;
 }, "/Users/yordan/Projects/SunstoneIN-Web/board-portal/src/layouts/Layout.astro", void 0);
 
-const $$Astro = createAstro();
+const $$Astro = createAstro("https://sunstoneinclusivity.network");
 const $$Index = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Index;

@@ -38,7 +38,7 @@ serve(async (req) => {
     
     for (const email of recipient_emails) {
       await client.send({
-        from: 'board-portal@example.com',
+        from: 'board-portal@sunstoneinclusivity.network',
         to: email,
         subject: subject,
         content: content,

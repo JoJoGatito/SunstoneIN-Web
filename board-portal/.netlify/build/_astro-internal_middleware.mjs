@@ -3,7 +3,7 @@ import './chunks/shared_BTASe_bZ.mjs';
 import 'kleur/colors';
 import 'html-escaper';
 import 'clsx';
-import { A as AstroError, R as ResponseSentError, F as ForbiddenRewrite } from './chunks/astro/server_Diyk09nw.mjs';
+import { A as AstroError, R as ResponseSentError, F as ForbiddenRewrite } from './chunks/astro/server_DdXDRuRu.mjs';
 import { serialize, parse } from 'cookie';
 import { s as supabase } from './chunks/supabase_x6k2sfRc.mjs';
 

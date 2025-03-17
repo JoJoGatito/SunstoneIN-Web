@@ -1,12 +1,12 @@
 /* empty css                                       */
-import { f as createComponent, g as createAstro, l as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../../../chunks/astro/server_Diyk09nw.mjs';
+import { f as createAstro, g as createComponent, l as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../../../chunks/astro/server_DdXDRuRu.mjs';
 import 'kleur/colors';
 import 'html-escaper';
-import { $ as $$PortalLayout } from '../../../chunks/PortalLayout_Cb8ujQCf.mjs';
+import { $ as $$PortalLayout } from '../../../chunks/PortalLayout_BCyQirPy.mjs';
 import { s as supabase } from '../../../chunks/supabase_x6k2sfRc.mjs';
 export { renderers } from '../../../renderers.mjs';
 
-const $$Astro = createAstro();
+const $$Astro = createAstro("https://sunstoneinclusivity.network");
 const $$id = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$id;
