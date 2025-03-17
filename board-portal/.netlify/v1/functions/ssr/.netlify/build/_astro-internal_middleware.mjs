@@ -5,7 +5,7 @@ import 'html-escaper';
 import 'clsx';
 import { A as AstroError, R as ResponseSentError, F as ForbiddenRewrite } from './chunks/astro/server_Diyk09nw.mjs';
 import { serialize, parse } from 'cookie';
-import { s as supabase } from './chunks/supabase_Bo_7_kFL.mjs';
+import { s as supabase } from './chunks/supabase_x6k2sfRc.mjs';
 
 const DELETED_EXPIRATION = /* @__PURE__ */ new Date(0);
 const DELETED_VALUE = "deleted";
@@ -280,16 +280,30 @@ function defineMiddleware(fn) {
 }
 
 const onRequest$1 = defineMiddleware(async ({ request, redirect, locals }, next) => {
-  const { pathname } = new URL(request.url);
-  if (pathname === "/" || pathname === "/login" || pathname === "/signup" || pathname === "/reset-password") {
+  const url = new URL(request.url);
+  const { pathname } = url;
+  console.log("Middleware processing URL:", url.toString());
+  console.log("Pathname:", pathname);
+  const astroPathParam = url.searchParams.get("astro_path");
+  const effectivePath = astroPathParam || pathname;
+  console.log("Effective path for auth check:", effectivePath);
+  if (effectivePath === "/" || effectivePath === "/login" || effectivePath === "/signup" || effectivePath === "/reset-password") {
+    console.log("Public route, no auth needed");
     return next();
   }
-  const { data: { session } } = await supabase.auth.getSession();
-  if (!session && !pathname.startsWith("/public")) {
-    return redirect("/login");
-  }
-  if (session) {
-    locals.user = session.user;
+  try {
+    const { data: { session } } = await supabase.auth.getSession();
+    console.log("Session check:", session ? "User is logged in" : "No session found");
+    if (!session && !effectivePath.startsWith("/public")) {
+      console.log("Protected route with no session, redirecting to login");
+      const loginPath = pathname.includes("/.netlify/functions/entry") ? "/.netlify/functions/entry?astro_path=/login" : "/login";
+      return redirect(loginPath);
+    }
+    if (session) {
+      locals.user = session.user;
+    }
+  } catch (error) {
+    console.error("Auth error in middleware:", error);
   }
   return next();
 });

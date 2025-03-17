@@ -1,8 +1,7 @@
 [build]
   base = "board-portal"
   command = "npm run build"
-  publish = "dist"
-  functions = ".netlify/functions-internal"
+  publish = "dist/client"
   
   # Ensure environment variables are passed to the build
   [build.environment]
@@ -13,38 +12,14 @@
   command = "npm run dev"
   framework = "astro"
   
-[[redirects]]
-  from = "/"
-  to = "/.netlify/functions/entry?astro_path=/"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/login"
-  to = "/.netlify/functions/entry?astro_path=/login"
-  status = 200
-  force = true
-  
-[[redirects]]
-  from = "/portal/*"
-  to = "/.netlify/functions/entry?astro_path=/portal/:splat"
-  status = 200
-  force = true
-
+# Let Astro's built-in Netlify adapter handle the routing
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/entry?astro_path=/:splat"
+  to = "/.netlify/functions/entry"
   status = 200
-  force = true
-  
+
 # Set cache headers for static assets
 [[headers]]
   for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
-
-# Add additional redirect for static assets
-[[redirects]]
-  from = "/_astro/*"
-  to = "/dist/_astro/:splat"
-  status = 200

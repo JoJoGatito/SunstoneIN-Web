@@ -1,27 +1,18 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
-import node from '@astrojs/node';
+import netlify from '@astrojs/netlify';
 
-// Use Node adapter explicitly since we're having issues with Netlify adapter
+// Switch back to Netlify adapter with simpler config
 export default defineConfig({
   integrations: [
-    // Configure tailwind with explicit content paths
     tailwind({
       config: { 
-        applyBaseStyles: false,
-        content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}']
+        applyBaseStyles: false
       }
     }), 
     react()
   ],
   output: 'server',
-  adapter: node({
-    mode: 'standalone'
-  }),
-  // Ensure all assets and URLs use correct base paths
-  build: {
-    assets: '_astro',
-    assetsPrefix: '/_astro/'
-  }
+  adapter: netlify()  // Use default Netlify adapter settings
 });
