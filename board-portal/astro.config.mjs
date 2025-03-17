@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 import netlify from '@astrojs/netlify';
 
-// Switch back to Netlify adapter with simpler config
+// Configure Astro with Netlify adapter
 export default defineConfig({
   site: 'https://sunstoneinclusivity.network',
   integrations: [
@@ -15,7 +15,10 @@ export default defineConfig({
     react()
   ],
   output: 'server',
+  // Explicitly configure the Netlify adapter with the function name
   adapter: netlify({
-    functionName: 'ssr'
+    functionName: 'ssr',
+    binaryMediaTypes: ['image/*', 'font/*', 'application/octet-stream'],
+    edgeMiddleware: false
   })
 });

@@ -13,6 +13,10 @@
   command = "npm run dev"
   framework = "astro"
   
+# Functions configuration - explicitly define the ssr function
+[functions]
+  directory = ".netlify/v1/functions"
+
 # All requests are handled by the SSR function
 [[redirects]]
   from = "/*"

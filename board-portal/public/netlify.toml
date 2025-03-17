@@ -1,0 +1,15 @@
+# Functions configuration
+[functions]
+  directory = ".netlify/v1/functions"
+
+# All requests are handled by the SSR function
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/ssr"
+  status = 200
+
+# Cache static assets for better performance
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
